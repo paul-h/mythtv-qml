@@ -6,7 +6,6 @@ SUBDIRS += \
                         src/mythSystemTools/mythsystemtools.pro \
                         programs/frontend/Mythbuntu-QML.pro \
                         src/mythDB/mythdb.pro \
-                        src/mythtvtheme/mythtvtheme.pro \
                         src/qt-creator/qtcreator.pro
 
 OTHER_FILES += \
