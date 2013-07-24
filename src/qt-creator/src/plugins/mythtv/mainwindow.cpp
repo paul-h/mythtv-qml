@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "sshdialog.h"
+#include "zconf.h"
+
 #include <QDesktopServices>
 #include <QDebug>
 #include <QUrl>
@@ -9,12 +12,15 @@
 #include <QSqlQuery>
 #include <QSqlTableModel>
 #include <QtCore>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-//    m_HostName = "http://192.168.1.21";
+
+
+    //    m_HostName = "http://192.168.1.21";
 //    m_DbName = "mythconverg";
 //    m_User = "mythtv";
 //    m_Password = "kweQI1U9";
@@ -23,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     db.setHostName(QLatin1String("http://192.168.1.21"));
     db.setDatabaseName(QLatin1String("mythconverg"));
     db.setUserName(QLatin1String("mythtv"));
-    db.setPassword(QLatin1String("kweQI1U9"));
+    db.setPassword(QLatin1String(""));
     db.setPort(3306);
     if (!db.open())
     {
@@ -54,7 +60,21 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::on_openwiki_clicked()
 {
-//    qDebug() << "button2 Clicked";
+
     QDesktopServices wiki;
     wiki.openUrl(QUrl(QLatin1String("http://www.mythtv.org/wiki/")));
+}
+
+void MainWindow::on_sshToBackend_clicked()
+{
+SShDialog mDialog;
+mDialog.setModal(true);
+mDialog.exec();
+}
+
+void MainWindow::on_mythfill_clicked()
+{
+    ZConf zconf;
+            zc.append(QLatin1String(zconf.getString().toLatin1()));
+    qDebug() << zc;
 }

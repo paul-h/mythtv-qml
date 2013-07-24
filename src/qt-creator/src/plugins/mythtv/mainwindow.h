@@ -24,9 +24,14 @@ protected:
 private slots:
     void on_openwiki_clicked();
 
+    void on_sshToBackend_clicked();
+
+    void on_mythfill_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlTableModel *model;
+    QString zc;
 };
 
 #endif // MAINWINDOW_H

@@ -76,5 +76,6 @@
         <file>images/logo/32/mythtv_32.png</file>
         <file>images/logo/64/mythtv_64.png</file>
         <file>images/logo/128/mythtv_128.png</file>
+        <file>Main.qml</file>
     </qresource>
 </RCC>

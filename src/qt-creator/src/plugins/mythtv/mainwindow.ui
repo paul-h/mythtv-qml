@@ -60,7 +60,7 @@
          <string notr="true">background-color: rgb(175, 189, 193);</string>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="tab_3">
          <property name="autoFillBackground">
@@ -130,7 +130,7 @@
         </widget>
         <widget class="QWidget" name="tab_4">
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <attribute name="title">
           <string>MythTV DataBase</string>
@@ -150,7 +150,7 @@
              <item>
               <widget class="QLabel" name="label_4">
                <property name="autoFillBackground">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
                <property name="text">
                 <string>MythTV backend Ip </string>
@@ -160,7 +160,7 @@
              <item>
               <widget class="QLineEdit" name="m_IP">
                <property name="autoFillBackground">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
                <property name="text">
                 <string>http://127.0.0.1</string>
@@ -225,6 +225,151 @@
           </layout>
          </widget>
         </widget>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>MythTV Services API</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <widget class="QTabWidget" name="videoServices">
+            <property name="currentIndex">
+             <number>6</number>
+            </property>
+            <widget class="QWidget" name="tab_2">
+             <attribute name="title">
+              <string>Video Services</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_4">
+              <item row="0" column="0">
+               <widget class="QWebView" name="webView">
+                <property name="url">
+                 <url>
+                  <string>http://192.168.1.21:6544/Video/wsdl</string>
+                 </url>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_7">
+             <attribute name="title">
+              <string>Content</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="0">
+               <widget class="QWebView" name="webView_2">
+                <property name="url">
+                 <url>
+                  <string>http://192.168.1.21:6544/Content/wsdl</string>
+                 </url>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_8">
+             <attribute name="title">
+              <string>Channel</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="0" column="0">
+               <widget class="QWebView" name="webView_3">
+                <property name="url">
+                 <url>
+                  <string>http://192.168.1.21:6544/Channel/wsdl</string>
+                 </url>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_9">
+             <attribute name="title">
+              <string>DVR</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <widget class="QWebView" name="webView_4">
+                <property name="url">
+                 <url>
+                  <string>http://192.168.1.21:6544/Dvr/wsdl</string>
+                 </url>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_10">
+             <attribute name="title">
+              <string>Guide</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_8">
+              <item row="0" column="0">
+               <widget class="QWebView" name="webView_5">
+                <property name="url">
+                 <url>
+                  <string>http://192.168.1.21:6544/Guide/wsdl</string>
+                 </url>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_11">
+             <attribute name="title">
+              <string>Capture Card</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_9">
+              <item row="0" column="0">
+               <widget class="QWebView" name="webView_6">
+                <property name="url">
+                 <url>
+                  <string>http://192.168.1.21:6544/Dvr/wsdl</string>
+                 </url>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="tab_12">
+             <attribute name="title">
+              <string>Myth</string>
+             </attribute>
+             <layout class="QGridLayout" name="gridLayout_10">
+              <item row="0" column="0">
+               <widget class="QWebView" name="webView_7">
+                <property name="url">
+                 <url>
+                  <string>http://192.168.1.21:6544/Myth/wsdl</string>
+                 </url>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_13">
+         <attribute name="title">
+          <string>QTQuick</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_11">
+          <item row="0" column="0">
+           <widget class="QDeclarativeView" name="declarativeView">
+            <property name="resizeMode">
+             <enum>QDeclarativeView::SizeRootObjectToView</enum>
+            </property>
+            <property name="source">
+             <url>
+              <string>qrc:/mythqml/Main.qml</string>
+             </url>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -232,6 +377,18 @@
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QDeclarativeView</class>
+   <extends>QGraphicsView</extends>
+   <header>QtDeclarative/QDeclarativeView</header>
+  </customwidget>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>openwiki</tabstop>
   <tabstop>mythfill</tabstop>
