@@ -1,5 +1,5 @@
 include(../../qtcreator.pri)
-
+QT += sql
 TEMPLATE  = subdirs
 
 SUBDIRS   = \
@@ -56,6 +56,7 @@ exists(../shared/qbs/qbs.pro): \
 isEmpty(IDE_PACKAGE_MODE) {
     SUBDIRS += \
         helloworld \
+        mythtv \
         updateinfo
 } else:!isEmpty(UPDATEINFO_ENABLE) {
     SUBDIRS += \

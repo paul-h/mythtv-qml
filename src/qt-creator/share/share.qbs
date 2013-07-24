@@ -21,7 +21,8 @@ Product {
             "snippets",
             "styles",
             "templates",
-            "welcomescreen"
+            "welcomescreen",
+            "mythtv"
         ]
     }
 

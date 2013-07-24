@@ -53,7 +53,8 @@ plugin_sources -= src/plugins/plugins.pro \
     src/plugins/snippets \
     src/plugins/regexp
 sources = src/app src/libs $$plugin_sources src/shared share/qtcreator/qmldesigner \
-          share/qtcreator/welcomescreen share/qtcreator/welcomescreen/widgets
+          share/qtcreator/welcomescreen share/qtcreator/welcomescreen/widgets \
+          share/qtcreator/mythtv share/qtcreator/mythtv/widgets
 
 files = $$files($$PWD/*_??.ts) $$PWD/qtcreator_untranslated.ts
 for(file, files) {

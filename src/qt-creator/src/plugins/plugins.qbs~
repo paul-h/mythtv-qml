@@ -56,7 +56,6 @@ Project {
         "updateinfo/updateinfo.qbs",
         "valgrind/valgrind.qbs",
         "vcsbase/vcsbase.qbs",
-        "welcome/welcome.qbs",
-        "mythtv/welcome.qbs"
+        "welcome/welcome.qbs"
     ]
 }
