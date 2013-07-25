@@ -20,7 +20,8 @@ HEADERS += \
     zconf.h \
     bonjourrecord.h \
     bonjourservicebrowser.h \
-    bonjourserviceresolver.h
+    bonjourserviceresolver.h \
+    moresdkdialog.h
 
 SOURCES += \
     mythtvwindow.cpp \
@@ -29,7 +30,8 @@ SOURCES += \
     sshdialog.cpp \
     zconf.cpp \
     bonjourservicebrowser.cpp \
-    bonjourserviceresolver.cpp
+    bonjourserviceresolver.cpp \
+    moresdkdialog.cpp
 
 OTHER_FILES += \
     icon.png \
@@ -40,4 +42,5 @@ RESOURCES += \
 
 FORMS += \
     mainwindow.ui \
-    sshdialog.ui
+    sshdialog.ui \
+    moresdkdialog.ui

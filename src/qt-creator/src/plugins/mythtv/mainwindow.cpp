@@ -19,12 +19,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-    //    m_HostName = "http://192.168.1.21";
-//    m_DbName = "mythconverg";
-//    m_User = "mythtv";
-//    m_Password = "kweQI1U9";
-
     QSqlDatabase  db = QSqlDatabase::addDatabase(QLatin1String("QMYSQL") );
     db.setHostName(QLatin1String("http://192.168.1.21"));
     db.setDatabaseName(QLatin1String("mythconverg"));

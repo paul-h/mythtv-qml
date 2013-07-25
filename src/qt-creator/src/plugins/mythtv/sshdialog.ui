@@ -22,7 +22,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="ipaddress">
      <property name="text">
       <string>127.0.0.1</string>
      </property>
@@ -36,7 +36,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_3">
+    <widget class="QLineEdit" name="hostname">
      <property name="text">
       <string>mythtv</string>
      </property>
@@ -50,7 +50,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="pass">
      <property name="text">
       <string>pass</string>
      </property>
@@ -70,14 +70,14 @@
     </spacer>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="cancelButton">
      <property name="text">
       <string>Cancel</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="okButton">
      <property name="text">
       <string>Ok</string>
      </property>
@@ -86,5 +86,38 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SShDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>366</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-15</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>okButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SShDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>396</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-32</x>
+     <y>183</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
