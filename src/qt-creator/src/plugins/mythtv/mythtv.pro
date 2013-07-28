@@ -35,7 +35,8 @@ SOURCES += \
 
 OTHER_FILES += \
     icon.png \
-    Main.qml
+    Main.qml \
+    mythtv.qbs
 
 RESOURCES += \
     mythtvResources.qrc

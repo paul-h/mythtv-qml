@@ -48,7 +48,13 @@ for(data_dir, DATA_DIRS) {
     # Info.plist.in are handled below
     for(file, files):!contains(file, ".*/Info\\.plist\\.in$"):!exists($$file/*):FILES += $$file
 }
-OTHER_FILES += $$FILES
+OTHER_FILES += $$FILES \
+    templates/qml/mythtvtheme/Myththeme/MainMenuModel.qml \
+    templates/qml/mythtvtheme/Myththeme/Util/qtlook.js \
+    templates/qml/mythtvtheme/Myththeme/Media/MythThemeGridView.qml \
+    templates/qml/mythtvtheme/Myththeme/Media/MythThemeCoverFlow.qml \
+    templates/qml/mythtvtheme/Myththeme/Media/MythMediaLoaders.qml \
+    templates/qml/mythtvtheme/Myththeme/Media/Recorded.qml
 
 # conditionally deployed data
 !isEmpty(copydata) {

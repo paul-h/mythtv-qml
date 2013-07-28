@@ -57,6 +57,6 @@ Project {
         "valgrind/valgrind.qbs",
         "vcsbase/vcsbase.qbs",
         "welcome/welcome.qbs",
-        "mythtv/welcome.qbs"
+        "mythtv/mythtv.qbs"
     ]
 }

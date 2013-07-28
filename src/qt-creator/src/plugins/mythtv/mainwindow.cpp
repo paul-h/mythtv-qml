@@ -69,6 +69,7 @@ mDialog.exec();
 void MainWindow::on_mythfill_clicked()
 {
     ZConf zconf;
-            zc.append(QLatin1String(zconf.getString().toLatin1()));
-    qDebug() << zc;
+
+//            zc.append(QLatin1String(zconf.getString().toLatin1()));
+    qDebug() << zconf.getString();;
 }

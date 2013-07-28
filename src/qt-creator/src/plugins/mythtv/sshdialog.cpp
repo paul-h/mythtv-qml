@@ -26,16 +26,3 @@ void SShDialog::changeEvent(QEvent *e)
         break;
     }
 }
-
-void SShDialog::runProgram(const QString &mUser,const QString &mHost)
-{
-    QProcess *runner = new QProcess(this);
-    QStringList endList;
-    endList.append(QLatin1String("ssh "+ mUser + "@" + mHost));
-    runner->start(endList);
-}
-
-void SShDialog::on_okButton_clicked()
-{
-    SShDialog::runProgram(ipaddress.text,userName.text);
-}

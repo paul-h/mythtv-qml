@@ -2,7 +2,6 @@
 <template openeditor="main.qml" priority="2"
     featuresRequired="QtSupport.Wizards.FeatureQtQuickProject, QtSupport.Wizards.FeatureQtQuick, QtSupport.Wizards.FeatureQtQuick.2"
     id="QB.QML MythTV Theme">
-    <icon>icon.png</icon>
     <displayname>MythTV Theme QML</displayname>
     <displayname xml:lang="de">MythTV Theme QML</displayname>
     <description>Creates a Myth TV Theme Qt Quick 2 project. You can review Qt Quick 2 UI projects in the QML Scene and you need not build them. You do not need to have the development environment installed on your computer to create and run this type of projects. Requires Qt 5.0 or newer.</description>
