@@ -3,7 +3,6 @@ import QtQuick.LocalStorage 2.0
 import QtQuick.XmlListModel 2.0
 import  MythTv 1.0
 Image{
-
     id:rootUpandComing
     width:     parent.width
     height:    parent.height
@@ -17,7 +16,6 @@ Image{
             height:  rootUpandComing.height
             model: upandcomingModel
             delegate: Item {
-                //                property string testingNum: testingNumber.text
                 width: rootUpandComing.width
                 height: rootUpandComing.height
                 Text{
@@ -53,8 +51,5 @@ Image{
         source: DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/GetUpcomingList"
         query: "//ProgramList"
         XmlRole{name:"Count" ; query: "Count/string()"}
-        // onStatusChanged: {
-
-        // }
     }
 }

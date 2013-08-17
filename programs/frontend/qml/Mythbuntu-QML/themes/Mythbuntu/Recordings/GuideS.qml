@@ -8,7 +8,6 @@ ListView {
     width: parent.width
     height: parent.height
     keyNavigationWraps: true
-//    highlightRangeMode: "StrictlyEnforceRange"
     spacing: 5
     currentIndex: 0
     orientation: ListView.Horizontal
@@ -136,7 +135,6 @@ ListView {
         source: DataBase.ipAddress()+":"+DataBase.port()+"/Guide/GetProgramGuide?StartTime="+Util.now.toISOString()+"&EndTime="+Util.time2.toISOString()+"&StartChanId="+ChanId+"&NumChannels=1"+"&Details=true&Ascending=true"
         query: "/ProgramGuide/Channels/ChannelInfo/Programs/Program"
         XmlRole {name: "StartTime"; query: "StartTime/string()"}
-        //        XmlRole {name: "chanchan"; query: "..ChanId/string()"}
         XmlRole { name: "EndTime"; query: "EndTime/string()" }
         XmlRole { name: "Title"; query: "Title/string()" }
         XmlRole{name: "SubTitle"; query: "SubTitle/string()" }

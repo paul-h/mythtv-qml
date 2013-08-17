@@ -4,6 +4,7 @@ Rectangle{
     property string name: boolOText.text
     property string nameColor: boolOText.color
     property bool checked :checkBox.clicked
+    signal optionClicked
     id:boolORec
     width: parent.width
     height: parent.height
@@ -45,7 +46,10 @@ Rectangle{
         id: checkBox
         anchors.fill: boolOButtonRec
         property bool clicked : false
-        onButtonClick:  clicked = !clicked
+        onButtonClick: {
+            clicked = !clicked
+        optionClicked()
+        }
     }
         Image{
             id:boolOButton

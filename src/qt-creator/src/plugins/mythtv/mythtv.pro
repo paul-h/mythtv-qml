@@ -1,17 +1,13 @@
 include(../../qtcreatorplugin.pri)
-QT += \
-                network \
-                sql \
-                webkitwidgets \
-                declarative
+QT += network sql webkitwidgets declarative
 
 unix:!macx:!android: LIBS += -ldns_sd
 !contains(CONFIG,NO_AVAHI): unix:!macx:LIBS +=  -lavahi-client -lavahi-common
 win32:LIBS += -L"c:\\PROGRA~1\\BONJOU~1\\lib\\win32" -ldnssd
 win32:INCLUDEPATH += "c:\\program files\\bonjour sdk\\include"
 android:LIBS += -jmdns
-
-#LIBS += --lmysqlclient_r
+#LIBS += -lmysqlclient_r
+LIBS += -lmysqlclient_r
 HEADERS += \
     mythtvwindow.h \
     mythtvplugin.h \

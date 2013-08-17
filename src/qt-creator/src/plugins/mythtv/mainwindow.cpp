@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+//    app = QApplication(sys.argv);
 
     QSqlDatabase  db = QSqlDatabase::addDatabase(QLatin1String("QMYSQL") );
     db.setHostName(QLatin1String("http://192.168.1.21"));
@@ -25,10 +26,11 @@ MainWindow::MainWindow(QWidget *parent) :
     db.setUserName(QLatin1String("mythtv"));
     db.setPassword(QLatin1String(""));
     db.setPort(3306);
-    if (!db.open())
-    {
+//    if (!db.open())
+//    {
+    qDebug() << QSqlDatabase::drivers();
         qDebug() << db.lastError().text();
-    }
+//    }
     model = new QSqlTableModel(this);
     model->setTable(QLatin1String("recorded"));
     model->select();

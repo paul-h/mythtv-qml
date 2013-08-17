@@ -19,7 +19,7 @@ Item {
 
         }
         if(status === XmlListModel.Error){
-            console.log(XmlListModel.errorString())
+            console.log(XmlListModel.errorString() + count)
         reload()
         }
     }

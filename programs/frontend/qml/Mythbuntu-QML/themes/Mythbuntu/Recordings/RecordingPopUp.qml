@@ -66,7 +66,7 @@ Image{
                         else console.log("hmmm?")
                     }
                     doc.send();
-                saved.opacity = 1
+                    saved.opacity = 1
                     backaroo.opacity = 1
                 }
             }
@@ -108,7 +108,7 @@ Image{
 
     }
     //////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////
+    /////////////////////ADVANCED/////////////////////////////////
 
     Rectangle{
         id:popup
@@ -145,16 +145,18 @@ Image{
 
         }
         MythButton{
-         id: storageOptions
-         width: Screen.width
-         height:  Screen.height / 16
-         onButtonClick: {
-             settingsColoumn.opacity === 0 ? settingsColoumn.opacity = 1 : settingsColoumn.opacity =  0
-         }
-         name: "Recording Type"
-         namepxSize: height / 2
-         nameColor: "white"
-         anchors.top: wer.bottom
+            id: storageOptions
+            width: Screen.width
+            height:  Screen.height / 16
+            onButtonClick: {
+                settingsColoumn.opacity === 0 ? settingsColoumn.opacity = 1 : settingsColoumn.opacity =  0
+                console.log(startTimeTXT.text)
+
+            }
+            name: "Recording Type"
+            namepxSize: height / 2
+            nameColor: "white"
+            anchors.top: wer.bottom
         }
         ListView{
             id: settingsColoumn
@@ -162,58 +164,162 @@ Image{
             height:  Screen.height / 2
             opacity: 0
             Behavior on opacity {
-             NumberAnimation{
-              duration: 1000
-              easing.type: Easing.OutSine
-             }
+                NumberAnimation{
+                    duration: 1000
+                    easing.type: Easing.OutSine
+                }
             }
             anchors{
                 left: popup.left
                 top: recTypeDrop.bottom
             }
-        model: TypeOfRecordingModel{}
-        delegate: Item{
-            width: Screen.width
-            height:  Screen.height / 16
-            RecordingOptionsBool{
-             name: text
-             checked: false
-             nameColor: "white"
-             onCheckedChanged: {
-                checked === "true"  ?  settingsColoumn.opacity = 0 :  settingsColoumn.opacity = 1
-            }
+            model: TypeOfRecordingModel{}
+            delegate: Item{
+                width: Screen.width
+                height:  Screen.height / 16
+                RecordingOptionsBool{
+                    id:button
+                    name: text
+                    checked: false
+                    nameColor: "white"
+                    onOptionClicked: {
+                        if (type === "not"){
+                            var doc = new XMLHttpRequest();
+                            doc.open("POST",DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/AddRecordSchedule?StartTime="+StartTime+ "&ChanId="+ChanId+"&Type="+type+"&AutoExpire=1&AutoCommflag=1&AutoMetaLookup=1", true);
+                            doc.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+                            doc.onreadystatechange = function() {
+                                if (doc.readyState == doc.DONE) {
+                                    console.log(Title +" is Recording");
+                                }
+                                if (doc.status == 200, doc.readyState == 4) {
+                                    var resp = doc.responseXML
+                                    console.log("Doc XML response ready")
+                                }
+                                else console.log("hmmm?")
+                            }
+                            doc.send();
+//                            console.log(DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/AddRecordSchedule?StartTime="+StartTime+ "&ChanId="+ChanId+"&Type="+type+"&AutoExpire=1&AutoCommflag=1&AutoMetaLookup=1")
+                            rootT.opacity = 0
+                            saved.opacity = 1
+                            backaroo.opacity = 1
+                        }
+                        if (type === "daily"){
+                            var doc = new XMLHttpRequest();
+                            doc.open("POST",DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/AddRecordSchedule?StartTime="+StartTime+ "&ChanId="+ChanId+"&Type="+type+"&AutoExpire=1&AutoCommflag=1&AutoMetaLookup=1", true);
+                            doc.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+                            doc.onreadystatechange = function() {
+                                if (doc.readyState == doc.DONE) {
+                                    console.log(Title +" is Recording");
+                                }
+                                if (doc.status == 200, doc.readyState == 4) {
+                                    var resp = doc.responseXML
+                                    console.log("Doc XML response ready")
+                                }
+                                else console.log("hmmm?")
+                            }
+                            doc.send();
+//                            console.log( DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/AddRecordSchedule?StartTime="+StartTime+ "&ChanId="+ChanId+"&Type="+type+"&AutoExpire=1&AutoCommflag=1&AutoMetaLookup=1")
+                            rootT.opacity = 0
+                            saved.opacity = 1
+                            backaroo.opacity = 1
+                        }
+                        if (type === "single"){
+                            var doc = new XMLHttpRequest();
+                            doc.open("POST",DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/AddRecordSchedule?StartTime="+StartTime+ "&ChanId="+ChanId+"&Type="+type+"&AutoExpire=1&AutoCommflag=1&AutoMetaLookup=1", true);
+                            doc.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+                            doc.onreadystatechange = function() {
+                                if (doc.readyState == doc.DONE) {
+                                    console.log(Title +" is Recording");
+                                }
+                                if (doc.status == 200, doc.readyState == 4) {
+                                    var resp = doc.responseXML
+                                    console.log("Doc XML response ready")
+                                }
+                                else console.log("hmmm?")
+                            }
+                            doc.send();
+//                            console.log( DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/AddRecordSchedule?StartTime="+StartTime+ "&ChanId="+ChanId+"&Type="+type+"&AutoExpire=1&AutoCommflag=1&AutoMetaLookup=1")
+                            rootT.opacity = 0
+                            saved.opacity = 1
+                            backaroo.opacity = 1
+                        }
+                        if (type === "weekly"){
+                            var doc = new XMLHttpRequest();
+                            doc.open("POST",DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/AddRecordSchedule?StartTime="+StartTime+ "&ChanId="+ChanId+"&Type="+type+"&AutoExpire=1&AutoCommflag=1&AutoMetaLookup=1", true);
+                            doc.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+                            doc.onreadystatechange = function() {
+                                if (doc.readyState == doc.DONE) {
+                                    console.log(Title +" is Recording");
+                                }
+                                if (doc.status == 200, doc.readyState == 4) {
+                                    var resp = doc.responseXML
+                                    console.log("Doc XML response ready")
+                                }
+                                else console.log("hmmm?")
+                            }
+                            doc.send();
+
+//                            console.log( DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/AddRecordSchedule?StartTime="+StartTime+ "&ChanId="+ChanId+"&Type="+type+"&AutoExpire=1&AutoCommflag=1&AutoMetaLookup=1")
+                            rootT.opacity = 0
+                            saved.opacity = 1
+                            backaroo.opacity = 1
+                        }
+                        if (type === "all"){
+                            var doc = new XMLHttpRequest();
+                            doc.open("POST",DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/AddRecordSchedule?StartTime="+StartTime+ "&ChanId="+ChanId+"&Type="+type+"&AutoExpire=1&AutoCommflag=1&AutoMetaLookup=1", true);
+                            doc.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+                            doc.onreadystatechange = function() {
+                                if (doc.readyState == doc.DONE) {
+                                    console.log(Title +" is Recording");
+                                }
+                                if (doc.status == 200, doc.readyState == 4) {
+                                    var resp = doc.responseXML
+                                    console.log("Doc XML response ready")
+                                }
+                                else console.log("hmmm?")
+                            }
+                            doc.send();
+                            rootT.opacity = 0
+                            saved.opacity = 1
+                            backaroo.opacity = 1
+//                            console.log( DataBase.ipAddress()+":"+DataBase.port()+"/Dvr/AddRecordSchedule?StartTime="+StartTime+ "&ChanId="+ChanId+"&Type="+type+"&AutoExpire=1&AutoCommflag=1&AutoMetaLookup=1")
+                        }
+                    }
+                    onCheckedChanged: {
+                        checked === "true"  ?  settingsColoumn.opacity = 0 :  settingsColoumn.opacity = 1
+                    }
+                }
             }
         }
-        }
 
 
 
-//        ListView{
-//            id: storageColoumn
-//            width: Screen.width
-//            height:  Screen.height / 2
-//            opacity: 0
-//            Behavior on opacity {
-//             NumberAnimation{
-//              duration: 1600
-//              easing.type: Easing.OutQuad
-//             }
-//            }
-//            anchors{
-//                left: popup.left
-//                top: storageColoumn.bottom
-//            }
-//        model: TypeOfRecordingModel{}
-//        delegate: Item{
-//            width: Screen.width
-//            height:  Screen.height / 16
-//            RecordingOptionsBool{
-//             name: text
-//             checked: false
-//             nameColor: "white"
-//            }
-//        }
-//        }
+        //        ListView{
+        //            id: storageColoumn
+        //            width: Screen.width
+        //            height:  Screen.height / 2
+        //            opacity: 0
+        //            Behavior on opacity {
+        //             NumberAnimation{
+        //              duration: 1600
+        //              easing.type: Easing.OutQuad
+        //             }
+        //            }
+        //            anchors{
+        //                left: popup.left
+        //                top: storageColoumn.bottom
+        //            }
+        //        model: TypeOfRecordingModel{}
+        //        delegate: Item{
+        //            width: Screen.width
+        //            height:  Screen.height / 16
+        //            RecordingOptionsBool{
+        //             name: text
+        //             checked: false
+        //             nameColor: "white"
+        //            }
+        //        }
+        //        }
 
 
 
@@ -227,12 +333,12 @@ Image{
         text: itemName.text +  qsTr(" Is Going to Record")
         font.pixelSize: 64
         color: "white"
-    anchors.centerIn: parent
+        anchors.centerIn: parent
         opacity: 0
         Behavior   on opacity {
             ParallelAnimation{
-             NumberAnimation{duration:  10200; easing.type: Easing.OutQuad}
-             NumberAnimation { target: saved; property: "scale";from: 1 ; to: 0 ; duration: 10200; easing.type: Easing.OutQuad }
+                NumberAnimation{duration:  10200; easing.type: Easing.OutQuad}
+                NumberAnimation { target: saved; property: "scale";from: 1 ; to: 0 ; duration: 10200; easing.type: Easing.OutQuad }
             }
         }
     }

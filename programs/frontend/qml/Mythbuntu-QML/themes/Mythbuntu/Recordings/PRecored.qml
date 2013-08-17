@@ -2,11 +2,9 @@ import QtQuick 2.0
 //import QtWebKit 3.0
 import QtQuick.XmlListModel 2.0
 import QtQuick.LocalStorage 2.0
-//import Ubuntu.Components 0.1
-import "../../../common/dbUtil.js" as DataBase
-import "../../../common/Util.js" as Util
+import MythTv 1.0
+
 import "../../../examples"
-import "../../../common"
 Image{
     id: videosRoot
     width: parent.width

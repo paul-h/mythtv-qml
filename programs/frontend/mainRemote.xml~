@@ -1,0 +1,100 @@
+<FrontendActionList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" serializerVersion="1.1">
+<ActionList>
+<Action>
+<Key>0</Key>
+<Value>0</Value>
+</Action>
+
+<Action>
+<Key>1</Key>
+<Value>1</Value>
+</Action>
+
+<Action>
+<Key>2</Key>
+<Value>2</Value>
+</Action>
+
+<Action>
+<Key>3</Key>
+<Value>3</Value>
+</Action>
+
+<Action>
+<Key>4</Key>
+<Value>4</Value>
+</Action>
+
+<Action>
+<Key>5</Key>
+<Value>5</Value>
+</Action>
+
+<Action>
+<Key>6</Key>
+<Value>6</Value>
+</Action>
+
+<Action>
+<Key>7</Key>
+<Value>7</Value>
+</Action>
+
+<Action>
+<Key>8</Key>
+<Value>8</Value>
+</Action>
+
+<Action>
+<Key>9</Key>
+<Value>9</Value>
+</Action>
+
+
+
+
+
+<Action>
+<Key>BACK</Key>
+<Value>Exit or return to DVD menu</Value>
+</Action>
+
+<Action>
+<Key>ESCAPE</Key>
+<Value>Escape</Value>
+</Action>
+
+<Action>
+<Key>EXIT</Key>
+<Value>System Exit</Value>
+</Action>
+
+<Action>
+<Key>EXITPROMPT</Key>
+<Value>Display System Exit Prompt</Value>
+</Action>
+
+<Action>
+<Key>EXITSHOWNOPROMPTS</Key>
+<Value>Exit Show without any prompts</Value>
+</Action>
+
+
+
+<!-- move around -->
+<Action>
+<Key>NEXT</Key>
+<Value>Move to next widget</Value>
+</Action>
+
+<Action>
+<Key>DOWN</Key>
+<Value>Down Arrow</Value>
+</Action>
+
+<Action>
+<Key>LEFT</Key>
+<Value>Left Arrow</Value>
+</Action>
+
+</ActionList>

@@ -28,8 +28,8 @@ Image {
 
                 MythButton{
                     id: mediaLib
-                    height: focus === true ? parent.height / 7.7 : parent.height / 8
-                    width: focus === true ? parent.width : parent.width / 1.7
+                    height:parent.height / 8
+                    width:  parent.width / 1.7
                     name: "Schedual Recordings"
                  focus: true
                     nameColor: "white"

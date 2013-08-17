@@ -238,7 +238,7 @@ Rectangle{
         Behavior on opacity {NumberAnimation{duration: 900 }}
         MythThemeLoader{
             anchors.fill: superTheme
-            themeFile:  appThemePath + "LCARS.qml"
+            themeFile:  appThemePath + "MythUbuntu.qml"
         }
     }
     //    PreRecordedModel{}

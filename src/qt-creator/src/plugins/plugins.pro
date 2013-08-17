@@ -1,5 +1,4 @@
 include(../../qtcreator.pri)
-QT += sql
 TEMPLATE  = subdirs
 
 SUBDIRS   = \

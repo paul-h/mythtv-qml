@@ -3,8 +3,6 @@ import QtQuick.LocalStorage 2.0
 import MythTv 1.0
 import QtQuick.XmlListModel 2.0
 import QtQuick.Window 2.0
-//import "../../../common/dbUtil.js" as DataBase
-//import "../../../common/Util.js" as Util
 import "../../../examples"
 
 Rectangle {
@@ -324,10 +322,8 @@ Rectangle {
                         anchors.left: channelHomeButtonImg.right
                         GuideS{
                         id:guideRow
-//                            rotation:
                             width: chanInfo.width
                             height: chanInfo.height
-//                            x: channelHomeButtonImg.width
 
                         }
 //                        Rectangle{
@@ -367,6 +363,7 @@ Rectangle {
 
         MythActivityVideo {
             id: buyfferIndicator
+
             anchors.centerIn: parent
             width: homeChannelRec.width
             height: homeChannelRec.height
@@ -385,12 +382,12 @@ Rectangle {
                 if (status == XmlListModel.Ready){
                     buyfferIndicator.opacity = 0
                     buyfferIndicator.running = false
-                    //                console.log("Loaded" + source)
+                                    console.log("Loaded" + source)
                 }
                 if (status === XmlListModel.Loading){
                     buyfferIndicator.opacity = 1
                     buyfferIndicator.running = true
-                    console.log("Loading");
+                    console.log("Loading " + source);
                 }
                 if (status === XmlListModel.Error) console.log("Error: " + errorString + "\n \n \n " + schedule.source.toString());
             }

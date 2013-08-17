@@ -43,7 +43,7 @@ ListModel {
      }
      ListElement {
          text:"Remote"
-        loaderSource: "Remote.qml"
+        loaderSource: "remote/RemoteMouse.qml"
         waterMark: "watermark/tv.png"
 
      }
